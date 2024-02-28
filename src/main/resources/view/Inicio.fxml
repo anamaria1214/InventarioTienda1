@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefHeight="550.0" prefWidth="225.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #39a848;">
+               <children>
+                  <ImageView fitHeight="90.0" fitWidth="206.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/logoInventario.png" />
+                     </image></ImageView>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="451.0" prefWidth="225.0" style="-fx-background-color: #39a848;">
+               <children>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" stylesheets="@../css/boton.css" text="Productos">
+                     <VBox.margin>
+                        <Insets left="11.0" right="11.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" stylesheets="@../css/boton.css" text="Clientes">
+                     <VBox.margin>
+                        <Insets left="11.0" right="11.0" top="80.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" stylesheets="@../css/boton.css" text="Ventas">
+                     <VBox.margin>
+                        <Insets left="11.0" right="11.0" top="80.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
