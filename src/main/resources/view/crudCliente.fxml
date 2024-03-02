@@ -4,8 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventario.controller.CrudClienteController">
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -23,7 +22,7 @@
                               <Insets bottom="10.0" left="15.0" top="30.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField>
+                        <TextField fx:id="campoIdCliente">
                            <VBox.margin>
                               <Insets left="15.0" right="15.0" />
                            </VBox.margin>
@@ -33,7 +32,7 @@
                               <Insets bottom="10.0" left="15.0" top="15.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField>
+                        <TextField fx:id="campoNombreCliente">
                            <VBox.margin>
                               <Insets left="15.0" right="15.0" />
                            </VBox.margin>
@@ -43,18 +42,27 @@
                               <Insets left="15.0" right="15.0" top="15.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField>
+                        <TextField fx:id="campoDireccion">
                            <VBox.margin>
                               <Insets left="15.0" right="15.0" />
                            </VBox.margin>
                         </TextField>
                      </children>
                   </VBox>
-                  <VBox prefHeight="300.0" prefWidth="182.0">
+                  <VBox alignment="CENTER" prefHeight="300.0" prefWidth="182.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
+                        <Button fx:id="btnAgregar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Agregar">
+                           <VBox.margin>
+                              <Insets left="11.0" right="11.0" />
+                           </VBox.margin></Button>
+                        <Button fx:id="btnActualizar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Actualizar">
+                           <VBox.margin>
+                              <Insets left="11.0" right="11.0" top="50.0" />
+                           </VBox.margin></Button>
+                        <Button fx:id="btnEliminar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Eliminar">
+                           <VBox.margin>
+                              <Insets left="11.0" right="11.0" top="50.0" />
+                           </VBox.margin></Button>
                      </children>
                   </VBox>
                </children>
@@ -63,13 +71,14 @@
                <children>
                   <Label text="Registros:">
                      <VBox.margin>
-                        <Insets bottom="10.0" left="15.0" />
+                        <Insets bottom="10.0" left="15.0" top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TableView prefHeight="200.0" prefWidth="200.0">
+                  <TableView fx:id="tablaCliente" prefHeight="200.0" prefWidth="200.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+                      <TableColumn fx:id="columnaId" prefWidth="121.0" text="N. Identificación" />
+                      <TableColumn fx:id="columnaNombre" minWidth="0.0" prefWidth="240.0" text="Nombre" />
+                        <TableColumn fx:id="columnaDireccion" prefWidth="183.0" text="Dirección" />
                     </columns>
                      <VBox.margin>
                         <Insets left="15.0" right="15.0" />
