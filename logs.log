@@ -1,0 +1,14 @@
+mar. 04, 2024 4:46:56 P. M. inventario.model.Tienda <init>
+INFO: Se creó una nueva instancia
+mar. 04, 2024 4:46:56 P. M. inventario.model.Tienda leerProductos
+WARNING: src\main\resources\archivos\productos.txt (El sistema no puede encontrar el archivo especificado)
+mar. 04, 2024 4:49:40 P. M. inventario.model.Tienda <init>
+INFO: Se creó una nueva instancia
+mar. 04, 2024 4:49:40 P. M. inventario.model.Tienda leerProductos
+WARNING: productos.txt (El sistema no puede encontrar el archivo especificado)
+mar. 04, 2024 4:58:33 P. M. inventario.model.Tienda <init>
+INFO: Se creó una nueva instancia
+mar. 04, 2024 5:08:19 P. M. inventario.model.Tienda <init>
+INFO: Se creó una nueva instancia
+mar. 04, 2024 5:34:38 P. M. inventario.model.Tienda <init>
+INFO: Se creó una nueva instancia

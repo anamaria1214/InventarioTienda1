@@ -2,6 +2,7 @@ package inventario.model;
 
 import lombok.*;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -10,20 +11,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-@ToString
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Tienda {
 
+public class Tienda {
+    @Getter
     private int nit;
+    @Getter
     private String nombre;
+    @Getter
     private String direccion;
-    private HashMap<Integer, String> clientes;
-    private TreeSet<Producto> productos ;
+    @Getter
+    private HashMap<Integer, Cliente> clientes;
+    @Getter
+    private TreeSet<Producto> productos;
+    @Getter
     private LinkedList<Venta> ventas;
+    @Getter
     private HashSet<CarritoDeCompras> carritosDeCompras;
 
     private static Tienda Tienda;
@@ -42,11 +44,20 @@ public class Tienda {
 
         this.productos =  new TreeSet<>();
         leerProductos();
+        this.clientes= new HashMap<>();
 
     }
 
+    public static Tienda getInstance(){
+        if(Tienda == null){
+            Tienda = new Tienda();
+        }
+
+        return Tienda;
+    }
+
     private void leerProductos() {
-        try(Scanner scanner= new Scanner(new File("src/main/resources/archivos/productos.txt"))){
+        try(Scanner scanner= new Scanner(new File("src/main/resources/archivos/productos"))){
             while(scanner.hasNextLine()){
                 String linea= scanner.nextLine();
                 String [] valores= linea.split(";");
@@ -59,7 +70,11 @@ public class Tienda {
 
     }
 
-    //public void
+    public void agregarCliente(Cliente cliente){
+        clientes.put(cliente.getNumeroIdentificacion(), cliente);
+        JOptionPane.showMessageDialog(null,"Se registró correctamente");
+
+    }
 
 
 }

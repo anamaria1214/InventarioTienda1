@@ -1,6 +1,7 @@
 package inventario.controller;
 
 import inventario.model.Cliente;
+import inventario.model.Producto;
 import inventario.model.Tienda;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -16,6 +17,8 @@ import java.util.ResourceBundle;
 
 
 public class CrudClienteController implements Initializable {
+
+ private Tienda tienda = Tienda.getInstance();
 
  @FXML
  private TextField campoIdCliente;
@@ -36,7 +39,7 @@ public class CrudClienteController implements Initializable {
  @FXML
  private TableColumn columnaDireccion;
  @FXML
- private TableView tablaCliente;
+ private TableView<Producto> tablaCliente;
 
 
   @Override
@@ -45,12 +48,13 @@ public class CrudClienteController implements Initializable {
    columnaNombre.setCellValueFactory(new PropertyValueFactory<>("nombreCliente"));
    columnaDireccion.setCellValueFactory(new PropertyValueFactory<>("direccion"));
 
-   tablaCliente.setItems( FXCollections.observableHashMap( Tienda.getClientes() ) );
+   //tablaCliente.setItems( FXCollections.observableHashMap(tienda.getClientes()));
 
   }
 
   public void registarCliente(){
    Cliente cliente= new Cliente(campoNombreCliente.getText(),
            Integer.parseInt(campoIdCliente.getText()),campoDireccion.getText());
+           tienda.agregarCliente(cliente);
   }
 }
