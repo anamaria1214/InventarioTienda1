@@ -2,6 +2,7 @@ package inventario.controller;
 
 import inventario.model.Producto;
 import inventario.model.Tienda;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -16,16 +17,16 @@ public class InventarioController implements Initializable {
     private Tienda tienda = Tienda.getInstance();
 
     @FXML
-    private TableColumn<?, ?> columnaCantidadProducto;
+    private TableColumn<Producto, Integer> columnaCantidadProducto;
 
     @FXML
-    private TableColumn<?, ?> columnaIdentificacionProducto;
+    private TableColumn<Producto, String> columnaIdentificacionProducto;
 
     @FXML
-    private TableColumn<?, ?> columnaNombreProducto;
+    private TableColumn<Producto, String> columnaNombreProducto;
 
     @FXML
-    private TableColumn<?, ?> columnaPrecioProducto;
+    private TableColumn<Producto, Double> columnaPrecioProducto;
 
     @FXML
     private TableView<Producto> tablaProductos;
@@ -37,6 +38,6 @@ public class InventarioController implements Initializable {
         columnaNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombreProducto"));
         columnaPrecioProducto.setCellValueFactory(new PropertyValueFactory<>("precio"));
 
-        //tablaProductos.setItems(FXCollections.observableSet(tienda.getProductos()));
+        tablaProductos.setItems( FXCollections.observableList(tienda.getProductos().stream().toList()) );
     }
 }

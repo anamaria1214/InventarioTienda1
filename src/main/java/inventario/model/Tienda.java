@@ -61,8 +61,8 @@ public class Tienda {
             while(scanner.hasNextLine()){
                 String linea= scanner.nextLine();
                 String [] valores= linea.split(";");
-                this.productos.add(new Producto(Integer.parseInt(valores[0]), valores[1],
-                        Double.parseDouble(valores[2]), Integer.parseInt(valores[3])));
+
+                this.productos.add(new Producto(Integer.parseInt(valores[0]), valores[1], Double.parseDouble(valores[2]), Integer.parseInt(valores[3])));
             }
         }catch(IOException e){
             LOGGER.log(Level.WARNING, e.getMessage());
@@ -72,8 +72,6 @@ public class Tienda {
 
     public void agregarCliente(Cliente cliente){
         clientes.put(cliente.getNumeroIdentificacion(), cliente);
-        JOptionPane.showMessageDialog(null,"Se registró correctamente");
-
     }
 
 
