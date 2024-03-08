@@ -15,10 +15,10 @@ public class InicioController {
     
     @FXML
     private Button btnClientes;
-
     @FXML
     private Button btnProductos;
-
+    @FXML
+    private Button btnCarrito;
     @FXML
     private Button btnVentas;
     @FXML
@@ -33,6 +33,9 @@ public class InicioController {
     }
     public void abrirVentanaVentas() {
         cambiarVentana("ventas");
+    }
+    public void abrirVentanaCarrito() {
+        cambiarVentana("carrito");
     }
 
     private void cambiarVentana(String fxmlname) {

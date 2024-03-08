@@ -55,7 +55,7 @@
                            <VBox.margin>
                               <Insets left="11.0" right="11.0" />
                            </VBox.margin></Button>
-                        <Button fx:id="btnActualizar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Actualizar">
+                        <Button fx:id="btnActualizar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnActualizar" text="Actualizar">
                            <VBox.margin>
                               <Insets left="11.0" right="11.0" top="50.0" />
                            </VBox.margin></Button>

@@ -69,10 +69,49 @@ public class Tienda {
         }
 
     }
+    public static Producto encontrarProducto(int codProducto){
+        return null;
+    }
+    public void agregarAlCarrito(int codProducto){
+        Producto producto= encontrarProducto(codProducto);
+
+    }
+    public double calcularPrecioTotalCarrito(HashSet<Venta>productosCarrito){
+        double precioTotal = 0;
+        for (Venta producto : productosCarrito) {
+            ArrayList<DetalleVenta> productos1 = producto.getDetalles();
+            for (DetalleVenta detalle: productos1) {
+                precioTotal += (detalle.getSubTotal()*detalle.getCantidad());
+            }
+        }
+        return  precioTotal;
+    }
+    public double calcularCantidadElementosCarrito(HashSet<Venta> productosCarrito) {
+        double productosTotal = 0;
+        for (Venta venta : productosCarrito) {
+            ArrayList<DetalleVenta> productos = venta.getDetalles();
+            for (DetalleVenta detalle : productos) {
+                productosTotal += detalle.getCantidad();
+            }
+        }
+        return productosTotal;
+    }
 
     public void agregarCliente(Cliente cliente){
         clientes.put(cliente.getNumeroIdentificacion(), cliente);
     }
+
+    public void actualizarCliente(Cliente cliente, int id) {
+        if (clientes.containsKey(id)) {
+            clientes.put(id, cliente);
+            System.out.println("Cliente actualizado correctamente.");
+        } else {
+            System.out.println("No se encontró ningún cliente con el Numero de identificación proporcionado.");
+        }
+    }
+
+
+
 
 
 }

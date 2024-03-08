@@ -1,9 +1,7 @@
 package inventario.controller;
 
 import inventario.model.Cliente;
-import inventario.model.Producto;
 import inventario.model.Tienda;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -50,11 +48,6 @@ public class CrudClienteController implements Initializable {
    columnaDireccion.setCellValueFactory(new PropertyValueFactory<>("direccion"));
    listarClientes();
 
-   tablaCliente.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-    System.out.println(newSelection);
-    Cliente eliminar = newSelection;
-    //tienda.eliminarCliente(eliminar);
-   });
   }
 
   public void registarCliente(){
@@ -67,13 +60,25 @@ public class CrudClienteController implements Initializable {
 
   }
   public void eliminarCliente(){
-
-
-
   }
+
+
+ public void actualizarCliente(int numeroIdentificacion){
+  Cliente cliente= new Cliente(campoNombreCliente.getText(),
+          Integer.parseInt(campoIdCliente.getText()),campoDireccion.getText());
+  tienda.actualizarCliente(cliente, numeroIdentificacion);
+
+}
+
   public void listarClientes(){
    tablaCliente.setItems( FXCollections.observableList(tienda.getClientes().values().stream().toList()));
 
+  }
+  public void setBtnActualizar() {
+   tablaCliente.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+    actualizarCliente(newSelection.getNumeroIdentificacion());
+    listarClientes();
+   });
   }
 
 }

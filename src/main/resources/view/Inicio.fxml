@@ -36,7 +36,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" stylesheets="@../css/boton.css" text="Carrito de compras">
+                  <Button fx:id="btnCarrito" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#abrirVentanaCarrito" stylesheets="@../css/boton.css" text="Carrito de compras">
                      <VBox.margin>
                         <Insets left="11.0" right="11.0" top="80.0" />
                      </VBox.margin>
