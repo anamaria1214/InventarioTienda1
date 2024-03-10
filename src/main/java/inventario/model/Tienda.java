@@ -73,7 +73,7 @@ public class Tienda {
     }
 
     public void agregarCliente(Cliente cliente){
-        if(obtenerCliente(cliente.getNumeroIdentificacion())!=null){
+        if(obtenerCliente(cliente.getNumeroIdentificacion())==null){
             clientes.put(cliente.getNumeroIdentificacion(), cliente);
         }else{
             JOptionPane.showMessageDialog(null, "El cliente ya se encuentra registrado");
@@ -148,8 +148,16 @@ public class Tienda {
         Cliente cliente = new Cliente();
         if(clientes.containsKey(idCliente)){
             cliente = clientes.get(idCliente);
+            return cliente;
+        }else{
+            return null;
         }
-        return cliente;
+
+    }
+    public void eliminarCliente(int id) {
+        if (clientes.containsKey(id)) {
+            clientes.remove(id);
+        }
     }
 
     private double calcularPrecioTotalCarrito2(ArrayList<DetalleVenta> productos) {

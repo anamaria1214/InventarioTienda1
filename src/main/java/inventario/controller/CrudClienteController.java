@@ -59,8 +59,7 @@ public class CrudClienteController implements Initializable {
    listarClientes();
 
   }
-  public void eliminarCliente(){
-  }
+
 
 
  public void actualizarCliente(int numeroIdentificacion){
@@ -74,17 +73,18 @@ public class CrudClienteController implements Initializable {
    tablaCliente.setItems( FXCollections.observableList(tienda.getClientes().values().stream().toList()));
 
   }
-  public void setBtnActualizar() {
-   tablaCliente.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-    actualizarCliente(newSelection.getNumeroIdentificacion());
-    listarClientes();
-   });
-  }
  public void actualizarCliente(){
   Cliente cliente= new Cliente(campoNombreCliente.getText(),
           Integer.parseInt(campoIdCliente.getText()),campoDireccion.getText());
   tienda.actualizarCliente(cliente);
   listarClientes();
+ }
+ public void eliminarCliente(){
+   tienda.eliminarCliente(Integer.parseInt(campoIdCliente.getText()));
+   listarClientes();
+   campoIdCliente.setText("");
+   campoDireccion.setText("");
+   campoNombreCliente.setText("");
  }
 
 }

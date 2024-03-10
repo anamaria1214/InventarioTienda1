@@ -40,6 +40,9 @@
                      <VBox.margin>
                         <Insets left="11.0" right="11.0" top="80.0" />
                      </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button fx:id="btnVentas" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#abrirVentanaVentas" stylesheets="@../css/boton.css" text="Historico de ventas">
                      <VBox.margin>
@@ -55,6 +58,13 @@
       </VBox>
    </left>
    <center>
-      <BorderPane fx:id="centerPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <BorderPane fx:id="centerPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <ImageView fitHeight="445.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../imagenes/BIENVENIDO.png" />
+               </image>
+            </ImageView>
+         </center></BorderPane>
    </center>
 </BorderPane>

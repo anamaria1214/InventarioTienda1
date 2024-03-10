@@ -13,12 +13,12 @@
                <VBox.margin>
                   <Insets bottom="30.0" left="20.0" top="30.0" />
                </VBox.margin></Label>
-            <Label prefHeight="38.0" prefWidth="537.0" styleClass="subtitulo" stylesheets="@../css/label.css" text="Nota: si el producto tiene menos de 10 unidades en el inventario, necesita restock" textAlignment="CENTER">
+            <Label prefHeight="38.0" prefWidth="537.0" styleClass="subtitulo1" stylesheets="@../css/label.css" text="Nota: si el producto tiene menos de 10 unidades en el inventario, necesita restock" textAlignment="CENTER" textFill="#f89018">
                <VBox.margin>
                   <Insets bottom="30.0" left="20.0" />
                </VBox.margin>
                <font>
-                  <Font size="10.0" />
+                  <Font size="14.0" />
                </font></Label>
             <TableView fx:id="tablaProductos" prefHeight="528.0" prefWidth="557.0">
               <columns>

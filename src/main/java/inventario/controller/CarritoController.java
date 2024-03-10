@@ -25,8 +25,7 @@ import java.util.TreeSet;
 public class CarritoController implements Initializable {
     private Tienda tienda = Tienda.getInstance();
     private ArrayList<DetalleVenta> detalles = new ArrayList<>();
-    private HashSet<Producto> productos= new HashSet<>();
-    private CarritoDeCompras carrito= new CarritoDeCompras(1, productos);
+    private ArrayList<Producto> productos= new ArrayList<>();
 
     @FXML
     private Button btnAgregar;
@@ -87,5 +86,6 @@ public class CarritoController implements Initializable {
         }
 
     }
+
 
 }

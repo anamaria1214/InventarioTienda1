@@ -24,7 +24,7 @@ public class Main extends Application {
         Parent parent = loader.load();
         Scene scene = new Scene(parent);
         stage.setScene(scene);
-        stage.setTitle("Alquila Facil");
+        stage.setTitle("Inventario");
         stage.show();
 
     }

@@ -6,14 +6,14 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventario.controller.VentasController">
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="521.0" prefWidth="575.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Historico de ventas">
+            <Label styleClass="titulo" stylesheets="@../css/label.css" text="Historico de ventas">
                <VBox.margin>
                   <Insets left="20.0" top="30.0" />
                </VBox.margin>
             </Label>
-            <TableView fx:id="tablaVentas" prefHeight="451.0" prefWidth="535.0">
+            <TableView fx:id="tablaVentas" prefHeight="420.0" prefWidth="535.0">
               <columns>
                 <TableColumn fx:id="columnCodigo" prefWidth="122.0" text="Código" />
                 <TableColumn fx:id="ColumnCliente" prefWidth="144.0" text="Cliente" />
