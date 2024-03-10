@@ -13,12 +13,12 @@
                   <Insets left="20.0" top="30.0" />
                </VBox.margin>
             </Label>
-            <TableView fx:id="tablaVentas" prefHeight="420.0" prefWidth="535.0">
+            <TableView fx:id="tablaVentas" prefHeight="420.0" prefWidth="535.0" stylesheets="@../css/TableView.css">
               <columns>
-                <TableColumn fx:id="columnCodigo" prefWidth="122.0" text="Código" />
-                <TableColumn fx:id="ColumnCliente" prefWidth="144.0" text="Cliente" />
-                  <TableColumn fx:id="columnFecha" prefWidth="133.0" text="Fecha" />
-                  <TableColumn fx:id="ColumnPrecioTotal" prefWidth="135.0" text="Precio total" />
+                <TableColumn fx:id="columnCodigo" prefWidth="102.0" text="Código" />
+                <TableColumn fx:id="ColumnCliente" prefWidth="164.0" text="Cliente" />
+                  <TableColumn fx:id="columnFecha" prefWidth="118.0" text="Fecha" />
+                  <TableColumn fx:id="ColumnPrecioTotal" prefWidth="150.0" text="Precio total" />
               </columns>
                <VBox.margin>
                   <Insets left="20.0" right="20.0" top="30.0" />

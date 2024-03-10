@@ -5,6 +5,7 @@
     -fx-padding: 5 10 5 10; /* Espaciado interior (arriba, derecha, abajo, izquierda) */
     -fx-background-color: transparent;
     -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: bold;
 }
 .ejemplo{
     -fx-font-family: "Arial"; /* Fuente */

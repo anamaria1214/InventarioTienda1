@@ -93,7 +93,7 @@
                         <Insets bottom="10.0" left="15.0" top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TableView fx:id="tablaCliente" prefHeight="180.0" prefWidth="545.0">
+                  <TableView fx:id="tablaCliente" prefHeight="180.0" prefWidth="545.0" stylesheets="@../css/TableView.css">
                     <columns>
                       <TableColumn fx:id="columnaId" prefWidth="121.0" text="N. Identificación" />
                       <TableColumn fx:id="columnaNombre" minWidth="0.0" prefWidth="240.0" text="Nombre" />

@@ -1,0 +1,17 @@
+.table-view {
+    -fx-background-color: white;
+    -fx-text-fill: dark green;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-border-color: orange;
+    -fx-border-width: 1px;
+    -fx-padding: 5px;
+}
+
+.table-row-cell {
+    -fx-control-inner-background: light green;
+}
+
+.table-row-cell:odd {
+    -fx-control-inner-background: #e0e0e0;
+}

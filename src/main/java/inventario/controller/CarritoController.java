@@ -25,7 +25,7 @@ import java.util.TreeSet;
 public class CarritoController implements Initializable {
     private Tienda tienda = Tienda.getInstance();
     private ArrayList<DetalleVenta> detalles = new ArrayList<>();
-    private ArrayList<Producto> productos= new ArrayList<>();
+    private ArrayList<Producto> carritoCompras= new ArrayList<>();
 
     @FXML
     private Button btnAgregar;
@@ -69,8 +69,8 @@ public class CarritoController implements Initializable {
             detalle.setSubTotal(subTotal);
             detalles.add(detalle);
 
-            productos.add(producto);
-            tablaProductosCarritos.setItems( FXCollections.observableList(productos.stream().toList()));
+            carritoCompras.add(producto);
+            tablaProductosCarritos.setItems( FXCollections.observableList(carritoCompras.stream().toList()));
             //tablaProductosCarritos.getItems().add(producto);
         }
     }
