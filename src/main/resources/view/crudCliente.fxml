@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -12,64 +13,82 @@
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="284.0" prefWidth="394.0">
                      <children>
-                        <Label text="Registro cliente">
+                        <Label styleClass="titulo" stylesheets="@../css/label.css" text="Registro cliente">
                            <VBox.margin>
-                              <Insets left="15.0" />
+                              <Insets left="15.0" top="15.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Número de identificación:">
+                        <Label styleClass="subtitulo" stylesheets="@../css/label.css" text="Número de identificación:">
                            <VBox.margin>
                               <Insets bottom="10.0" left="15.0" top="30.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField fx:id="campoIdCliente">
+                        <TextField fx:id="campoIdCliente" styleClass="textoField" stylesheets="@../css/textField.css">
                            <VBox.margin>
                               <Insets left="15.0" right="15.0" />
                            </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
                         </TextField>
-                        <Label text="Nombre:">
+                        <Label styleClass="subtitulo" stylesheets="@../css/label.css" text="Nombre:">
                            <VBox.margin>
                               <Insets bottom="10.0" left="15.0" top="15.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField fx:id="campoNombreCliente">
+                        <TextField fx:id="campoNombreCliente" styleClass="textoField" stylesheets="@../css/textField.css">
                            <VBox.margin>
                               <Insets left="15.0" right="15.0" />
                            </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
                         </TextField>
-                        <Label text="Dirección:">
+                        <Label styleClass="subtitulo" stylesheets="@../css/label.css" text="Dirección:">
                            <VBox.margin>
                               <Insets left="15.0" right="15.0" top="15.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField fx:id="campoDireccion">
+                        <TextField fx:id="campoDireccion" styleClass="textoField" stylesheets="@../css/textField.css">
                            <VBox.margin>
                               <Insets left="15.0" right="15.0" />
                            </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
                         </TextField>
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="300.0" prefWidth="182.0">
                      <children>
-                        <Button fx:id="btnAgregar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#registarCliente" text="Agregar">
+                        <Button fx:id="btnAgregar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#registarCliente" stylesheets="@../css/boton.css" text="Agregar">
                            <VBox.margin>
                               <Insets left="11.0" right="11.0" />
-                           </VBox.margin></Button>
-                        <Button fx:id="btnActualizar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnActualizar" text="Actualizar">
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnActualizar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#actualizarCliente" stylesheets="@../css/boton.css" text="Actualizar">
                            <VBox.margin>
                               <Insets left="11.0" right="11.0" top="50.0" />
-                           </VBox.margin></Button>
-                        <Button fx:id="btnEliminar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Eliminar">
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnEliminar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" stylesheets="@../css/boton.css" text="Eliminar">
                            <VBox.margin>
                               <Insets left="11.0" right="11.0" top="50.0" />
-                           </VBox.margin></Button>
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                      </children>
                   </VBox>
                </children>
             </HBox>
             <VBox prefHeight="315.0" prefWidth="575.0">
                <children>
-                  <Label text="Registros:">
+                  <Label styleClass="subtitulo" stylesheets="@../css/label.css" text="Registros:">
                      <VBox.margin>
                         <Insets bottom="10.0" left="15.0" top="10.0" />
                      </VBox.margin>

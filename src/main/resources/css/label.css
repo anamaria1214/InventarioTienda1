@@ -1,0 +1,17 @@
+.subtitulo{
+    -fx-font-family: "Arial"; /* Fuente */
+    -fx-font-size: 15px; /* Tamaño de fuente */
+    -fx-text-fill: #ff914d; /* Color del texto */
+    -fx-padding: 5 10 5 10; /* Espaciado interior (arriba, derecha, abajo, izquierda) */
+    -fx-background-color: transparent;
+    -fx-alignment: CENTER_LEFT;
+}
+.titulo {
+    -fx-font-family: "Arial"; /* Fuente */
+    -fx-font-size: 25px; /* Tamaño de fuente */
+    -fx-text-fill: #7ed957; /* Color del texto */
+    -fx-padding: 5 10 5 10; /* Espaciado interior (arriba, derecha, abajo, izquierda) */
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+    -fx-font-weight: bold; /* Fuente negrita */
+}

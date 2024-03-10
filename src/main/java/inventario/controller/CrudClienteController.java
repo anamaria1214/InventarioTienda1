@@ -80,5 +80,11 @@ public class CrudClienteController implements Initializable {
     listarClientes();
    });
   }
+ public void actualizarCliente(){
+  Cliente cliente= new Cliente(campoNombreCliente.getText(),
+          Integer.parseInt(campoIdCliente.getText()),campoDireccion.getText());
+  tienda.actualizarCliente(cliente);
+  listarClientes();
+ }
 
 }

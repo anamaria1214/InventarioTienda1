@@ -41,7 +41,7 @@
                         <Insets left="11.0" right="11.0" top="80.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="btnVentas" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#abrirVentanaVentas" stylesheets="@../css/boton.css" text="Ventas">
+                  <Button fx:id="btnVentas" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#abrirVentanaVentas" stylesheets="@../css/boton.css" text="Historico de ventas">
                      <VBox.margin>
                         <Insets left="11.0" right="11.0" top="80.0" />
                      </VBox.margin>

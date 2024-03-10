@@ -13,6 +13,6 @@ public class Venta {
     private int codigoventa;
     private String fecha;
     private double PrecioTotal;
-    private Cliente cliente;
+    private int idCliente;
     private ArrayList<DetalleVenta> detalles;
 }

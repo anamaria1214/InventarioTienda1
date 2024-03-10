@@ -5,6 +5,7 @@ import lombok.*;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -45,6 +46,7 @@ public class Tienda {
         this.productos =  new TreeSet<>();
         leerProductos();
         this.clientes= new HashMap<>();
+        this.ventas= new LinkedList<>();
 
     }
 
@@ -69,36 +71,14 @@ public class Tienda {
         }
 
     }
-    public static Producto encontrarProducto(int codProducto){
-        return null;
-    }
-    public void agregarAlCarrito(int codProducto){
-        Producto producto= encontrarProducto(codProducto);
-
-    }
-    public double calcularPrecioTotalCarrito(HashSet<Venta>productosCarrito){
-        double precioTotal = 0;
-        for (Venta producto : productosCarrito) {
-            ArrayList<DetalleVenta> productos1 = producto.getDetalles();
-            for (DetalleVenta detalle: productos1) {
-                precioTotal += (detalle.getSubTotal()*detalle.getCantidad());
-            }
-        }
-        return  precioTotal;
-    }
-    public double calcularCantidadElementosCarrito(HashSet<Venta> productosCarrito) {
-        double productosTotal = 0;
-        for (Venta venta : productosCarrito) {
-            ArrayList<DetalleVenta> productos = venta.getDetalles();
-            for (DetalleVenta detalle : productos) {
-                productosTotal += detalle.getCantidad();
-            }
-        }
-        return productosTotal;
-    }
 
     public void agregarCliente(Cliente cliente){
-        clientes.put(cliente.getNumeroIdentificacion(), cliente);
+        if(obtenerCliente(cliente.getNumeroIdentificacion())!=null){
+            clientes.put(cliente.getNumeroIdentificacion(), cliente);
+        }else{
+            JOptionPane.showMessageDialog(null, "El cliente ya se encuentra registrado");
+        }
+
     }
 
     public void actualizarCliente(Cliente cliente, int id) {
@@ -110,8 +90,82 @@ public class Tienda {
         }
     }
 
+    public boolean verificarProducto(String id) {
+        for (Producto producto: productos) {
+            if(producto.getCodProducto() == Integer.parseInt(id)){
+                return true;
+            }
+        }
+        return false;
+    }
 
+    public Producto obtenerProducto(String id) {
+        Producto productoNuevo = new Producto();
+        for (Producto producto: productos) {
+            if(producto.getCodProducto() == Integer.parseInt(id)){
+                productoNuevo = producto;
+                return productoNuevo;
+            }
+        }
+        return null;
+    }
+    public void restarInventario(Producto producto, int cantidad){
+        if (cantidad>=producto.getCantInventario()){
+            JOptionPane.showMessageDialog(null, "No se puede realizar la venta " +
+                    "porque no hay suficientes unidades en el inventario del producto seleccionado");
+        }else{
+            producto.setCantInventario(producto.getCantInventario()-cantidad);
 
+        }
 
+    }
 
+    public Venta crearVenta(ArrayList<DetalleVenta> productos, int idCliente) {
+        Venta venta = new Venta();
+        Cliente cliente = obtenerCliente(idCliente);
+        if(cliente!=null){
+            Random rand = new Random();
+            int codigo = rand.nextInt(1000);
+            LocalDate fechaActual = LocalDate.now();
+            String fecha = fechaActual.toString();
+            double precioTotal = calcularPrecioTotalCarrito2(productos);
+
+            venta.setIdCliente(cliente.getNumeroIdentificacion());
+            venta.setCodigoventa(codigo);
+            venta.setFecha(fecha);
+            venta.setPrecioTotal(precioTotal);
+            venta.setDetalles(productos);
+        }else{
+            JOptionPane.showMessageDialog(null,"El cliente no se encuentra registrado, se debe agregar primero");
+        }
+        return venta;
+    }
+    public void agregarVenta(Venta venta){
+        ventas.add(venta);
+    }
+
+    public Cliente obtenerCliente(int idCliente) {
+        Cliente cliente = new Cliente();
+        if(clientes.containsKey(idCliente)){
+            cliente = clientes.get(idCliente);
+        }
+        return cliente;
+    }
+
+    private double calcularPrecioTotalCarrito2(ArrayList<DetalleVenta> productos) {
+        double precioTotal = 0;
+        for (DetalleVenta detalle: productos) {
+            precioTotal += (detalle.getSubTotal());
+        }
+        return  precioTotal;
+    }
+
+    public void actualizarCliente(Cliente cliente) {
+        if (clientes.containsKey(cliente.getNumeroIdentificacion())) {
+            clientes.put(cliente.getNumeroIdentificacion(), cliente);
+            System.out.println("Cliente actualizado correctamente.");
+        } else {
+            System.out.println("No se encontró ningún cliente con el Numero de identificación proporcionado.");
+        }
+    }
 }

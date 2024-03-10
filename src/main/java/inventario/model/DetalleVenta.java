@@ -6,11 +6,12 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class DetalleVenta {
 
     private int cantidad;
-    private int subTotal;
+    private double subTotal;
     private Producto producto;
 
 
